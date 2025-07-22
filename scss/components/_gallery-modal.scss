@@ -1,6 +1,10 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
+.gallery-modal {
+    display: none;
+}
+
 @include respond(md) {
     .gallery-modal {
         display: none;
