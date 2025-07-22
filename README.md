@@ -4,7 +4,7 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 
 ## 🔗 Live Preview
 
-[View Live Site](https://deveins.github.io/fem-ecommerce-product-page)
+[View Live Site](https://deveins-fem.github.io/fem-ecommerce-product-page)
 
 ## 📸 Screenshots
 
