@@ -1,0 +1,299 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:color';
+
+.product-section {
+    @include respond(md) {
+        padding-block: clamp(3rem, 7vw, 5rem) 0;  
+    }
+
+    .product {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @include respond(md) {
+            grid-template-columns: repeat(2, minmax(0, 24rem));
+            gap: clamp(1rem, 5vw, 7rem);
+            justify-content: center;
+            align-items: center;
+          }
+    
+        @include respond(xl) {
+            grid-template-columns: repeat(2, minmax(0, 28rem));
+        }
+    
+    
+        &__gallery {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-xl;
+
+            @include respond(xl) {
+                gap: $spacing-xxl;
+            }
+    
+            &-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 2.5rem;
+                height: 2.5rem;
+                background-color: $color-neutral-white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: background-color 0.3s ease; 
+    
+                &:hover {
+                    background-color: $color-neutral-grayishblue;
+                }
+    
+                &--prev {
+                    left: 1rem;
+                }
+    
+                &--next {
+                    right: 1rem;
+                }
+    
+                @include respond(md) {
+                    display: none;
+                }
+            }
+        }
+    
+        &__image-wrapper {
+            position: relative;
+            width: 100%;
+            height: clamp(19rem, 75vw, 30rem);
+            overflow: hidden;
+    
+            @include respond(md) {
+                height: clamp(24rem, 6vw, 28rem);
+                border-radius: $radius-lg;
+                cursor: pointer;
+            }
+        }
+    
+        &__image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    
+        &__thumbnails {
+            display: none;
+
+            @include respond(md) {
+                display: flex;
+                gap: $spacing-xl;
+                justify-content: space-between;
+            }
+        }
+    
+        &__thumb {
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: $radius-lg;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+
+            @include respond(lg) {
+                width: 5.25rem;
+                height: 5.25rem;
+            }
+
+            @include respond(xl) {
+                width: 5.75rem;
+                height: 5.75rem;
+            }
+    
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: opacity 0.3s ease-in-out;
+    
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+    
+            &--active {
+                border-color: $color-primary;
+    
+                img {
+                    opacity: 0.5;
+                }
+            }
+        }
+    
+        &__details {
+            padding: $spacing-xl;
+    
+            @include respond(md) {
+                padding: 0;
+            }
+        }
+    
+        &__brand {
+            font-size: $font-size-sm;
+            font-weight: 700;
+            color: $color-neutral-darkgrayishblue;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.75rem;
+
+            @include respond(md) {
+                font-size: 0.8125rem;
+                margin-bottom: 1rem;
+            }
+        }
+    
+        &__title {
+            font-size: $fs-product-title-sm;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: $spacing-md;
+
+            @include respond(md) {
+                font-size: $fs-product-title-lg;
+                line-height: 1.1;
+                letter-spacing: -0.01em;
+                margin-bottom: $spacing-xxl;
+            }
+        }
+    
+        &__description {
+            font-size: $font-size-base;
+            color: $color-neutral-darkgrayishblue;
+            line-height: 1.55;
+            letter-spacing: -0.5px; 
+            margin-bottom: $spacing-xl; 
+            
+            @include respond(md) {
+                line-height: 1.6;
+                letter-spacing: 0;
+            }
+        }
+    
+        &__pricing {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: $spacing-xl;
+
+            @include respond(md) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: $spacing-md;
+                margin-bottom: 2.5rem;
+            }
+        }
+    
+        &__price-group {
+            display: flex;
+            align-items: center;
+            gap: $spacing-md;
+        }
+    
+        &__price {
+            font-size: $fs-product-price;
+            font-weight: 700;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+    
+        &__discount {
+            font-size: $font-size-base;
+            font-weight: 700;
+            border-radius: 5px;
+            padding:  0.1rem 0.5rem;
+            color: $color-neutral-white;
+            background-color: $color-neutral-black;
+        }
+    
+        &__original-price {
+            font-weight: 700;
+            color: $color-neutral-darkgrayishblue;
+            text-decoration: line-through;
+        }
+    
+        &__actions {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-md;
+
+            @include respond(md) {
+                flex-direction: row;
+            }
+        }
+    
+        &__quantity {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 3.5rem;
+            border-radius: $radius-md;
+            padding-inline: 1.5rem;
+            background-color: $color-neutral-lightgrayishblue;
+
+            @include respond(md) {
+                width: 10rem;
+            }
+        }
+    
+        &__qty-btn {
+            height: 100%;
+
+            svg {
+                color: $color-primary;
+
+                &:hover {
+                    color: color.adjust($color-primary, $lightness: 20%);
+                }
+
+                &:active {
+                    color: $color-primary;
+                }
+            }
+        }
+    
+        &__qty-value {
+            font-size: $font-size-base;
+            font-weight: 700;
+        }
+    
+        &__add-to-cart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: $spacing-sm;
+            width: 100%;
+            height: 3.5rem;
+            font-weight: 700;
+            font-size: $font-size-base;
+            border-radius: $radius-md;
+            color: $color-neutral-verydarkblue;
+            background-color: $color-primary;
+            box-shadow: 0px 20px 50px -20px hsla(0, 0%, 0%, 0.5);
+            transition: background-color 0.3s ease-in-out;
+    
+            &:hover {
+                background-color: color.adjust($color-primary, $lightness: 20%);
+            }
+    
+            &:active {
+                background-color: $color-primary;
+            }
+        }
+    }
+}

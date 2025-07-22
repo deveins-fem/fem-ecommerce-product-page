@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.container {
+    width: 100%;
+    max-width: 1110px;
+    margin-inline: auto;
+
+    @include respond(md) {
+        padding-inline: 1rem;
+    }
+}

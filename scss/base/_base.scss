@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as *;
+
+body {
+    font-family: $font-family-primary;
+    font-size: $font-size-base;
+    color: $color-neutral-black;
+    background-color: $color-neutral-white;
+    line-height: 1.6;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+}

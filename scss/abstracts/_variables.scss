@@ -1,0 +1,47 @@
+//colors
+$color-primary: hsl(26, 100%, 55%);
+$color-accent: hsl(25, 100%, 94%);
+$color-neutral-grayishblue: hsl(220, 14%, 75%);
+$color-neutral-lightgrayishblue: hsl(223, 64%, 98%);
+$color-neutral-darkgrayishblue: hsl(219, 9%, 45%);
+$color-neutral-verydarkblue: hsl(220, 13%, 13%);
+$color-neutral-white: hsl(0, 0%, 100%);
+$color-neutral-black: hsl(0, 0%, 0%);
+$color-neutral-transparentblack: hsla(0, 0%, 0%, 75%);
+
+//fonts
+$font-family-primary: "Kumbh Sans", sans-serif;
+$font-size-sm: 0.75rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$fs-product-title-sm: 1.75rem;
+$fs-product-title-lg:2.8125rem;
+$fs-product-price: 1.875rem;
+
+//spacing
+$spacing-xxs: 0.5rem;   
+$spacing-xs: 0.625rem; 
+$spacing-sm: 0.75rem;  
+$spacing-md: 1rem;    
+$spacing-lg: 1.25rem;  
+$spacing-xl: 1.5rem;
+$spacing-xxl: 2rem;
+$spacing-xxxl: 3rem;
+$spacing-logo-nav: 3.5rem;
+
+//border-radius
+$radius-xs: 2px;
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-pill: 9999px;
+
+//breakpoints
+$breakpoints: (
+  xs: 22rem, 
+  sm: 36rem,
+  md: 48rem,
+  lg: 64rem,
+  xl: 75rem 
+);
